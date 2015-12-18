@@ -4,4 +4,4 @@ Copy & paste only shadows styles from layers without others styles getting in th
 
 ## Installation
 
-Open Sketch, on menu Plugin > Reveal Plugins Folder. Download the plugin and add to above directory.
+Open Sketch, on menu **Plugin** > **Reveal Plugins Folder**. Download the plugin and add `Copy Paste Shadows.sketchplugin` to above directory.
