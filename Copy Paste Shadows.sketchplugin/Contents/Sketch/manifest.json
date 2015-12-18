@@ -1,0 +1,30 @@
+{
+  "name": "Copy & Paste Shadows",
+  "author" : "Ryan Johnson",
+  "version" : "0.1",
+  "description" : "Copies just the shadows from a layer, and allows pasting onto other layers",
+  "authorEmail" : "contact@ryanjohnson.me",
+  "commands" : [
+    {
+      "script" : "cp-shadows.cocoascript",
+      "handler" : "copyShadows",
+      "shortcut" : "cmd shift c",
+      "name" : "Copy Shadows",
+      "identifier" : "copyShadows"
+    },
+    {
+      "script" : "cp-shadows.cocoascript",
+      "handler" : "pasteShadows",
+      "shortcut" : "cmd shift b",
+      "name" : "Paste Shadows",
+      "identifier" : "pasteShadows"
+    },
+  ],
+  "menu": {
+    "title": "Copy & Paste Shadows",
+    "items": [
+      "copyShadows",
+      "pasteShadows"
+    ]
+  }
+}
