@@ -73,7 +73,7 @@ var pasteShadows = function(context) {
 	}
 
 	function clearShadows(selectedLayer) {
-		var properties = ["shadows", "innerShadows"], props;
+		var properties = ["shadows", "innerShadows"], propertyName;
 		for (var property in properties) {
 			propertyName = properties[property];
 			[selectedLayer style]["set" + propertyName[0].toUpperCase() + propertyName.substring(1)]([[MSArray alloc] init])
