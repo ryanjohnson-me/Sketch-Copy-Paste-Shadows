@@ -13,8 +13,8 @@ var copyShadows = function(context) {
 	if ([currentSelection count] == 1) {
 		var selectedLayer = [currentSelection objectAtIndex:0];
 		var getShadows = getAllShadows(selectedLayer);
-    var objString = JSON.stringify(getShadows, null, ' ');
-    userDefaults.string = objString;
+		var objString = JSON.stringify(getShadows, null, ' ');
+		userDefaults.string = objString;
 		saveDefaults(userDefaults);
 	}
 
@@ -26,38 +26,35 @@ var copyShadows = function(context) {
 	}
 
 	function getEachShadow(shadowsObj) {
-
 		var allStyles = [], getShadowStyle, currentShadowStyle, items = [shadowsObj array];
-
-			for (var i = 0; i < [items count]; i++) {
-				currentShadowStyle = [items objectAtIndex:i];
-				getShadowStyle = {};
-				getShadowStyle.isEnabled = [currentShadowStyle isEnabled];
-				getShadowStyle.blurRadius = [currentShadowStyle blurRadius];
-				getShadowStyle.spread = [currentShadowStyle spread];
-				getShadowStyle.offsetX = [currentShadowStyle offsetX];
-				getShadowStyle.offsetY = [currentShadowStyle offsetY];
-				var shadowColor = ([currentShadowStyle color]);
-				getShadowStyle.color = shadowColor.toString().replace('"', '');
-				allStyles.push(getShadowStyle);
-			}
-			return allStyles;
+		for (var i = 0; i < [items count]; i++) {
+			currentShadowStyle = [items objectAtIndex:i];
+			getShadowStyle = {};
+			getShadowStyle.isEnabled = [currentShadowStyle isEnabled];
+			getShadowStyle.blurRadius = [currentShadowStyle blurRadius];
+			getShadowStyle.spread = [currentShadowStyle spread];
+			getShadowStyle.offsetX = [currentShadowStyle offsetX];
+			getShadowStyle.offsetY = [currentShadowStyle offsetY];
+			var shadowColor = ([currentShadowStyle color]);
+			getShadowStyle.color = shadowColor.toString().replace('"', '');
+			allStyles.push(getShadowStyle);
+		}
+		return allStyles;
 	}
 }
 
 // -------------------------------------------------------------------
 
 var pasteShadows = function(context) {
-
 	var selection = context.selection;
 	if ([selection count] > 0) {
 		for (var i=0; i<[selection count]; i++) {
-				var selectedLayer = [selection objectAtIndex:i];
-				clearShadows(selectedLayer);
-				var shadowObj = JSON.parse(userDefaults.string);
-				pasteEachShadow(selectedLayer, shadowObj.shadows, 2);
-				pasteEachShadow(selectedLayer, shadowObj.innerShadows, 3);
-			}
+			var selectedLayer = [selection objectAtIndex:i];
+			clearShadows(selectedLayer);
+			var shadowObj = JSON.parse(userDefaults.string);
+			pasteEachShadow(selectedLayer, shadowObj.shadows, 2);
+			pasteEachShadow(selectedLayer, shadowObj.innerShadows, 3);
+		}
 	}
 
 	function pasteEachShadow(selectedLayer, shadowObj, shadowType) {
@@ -77,7 +74,6 @@ var pasteShadows = function(context) {
 
 	function clearShadows(selectedLayer) {
 		var properties = ["shadows", "innerShadows"], props;
-
 		for (var property in properties) {
 			propertyName = properties[property];
 			[selectedLayer style]["set" + propertyName[0].toUpperCase() + propertyName.substring(1)]([[MSArray alloc] init])
