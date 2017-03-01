@@ -1,7 +1,7 @@
 # Sketch Plugin: Copy & Paste Shadows
 
 Copy & paste only shadow styles from layers without others styles getting in the way.
-#### Now Sketch 3.8+ compatible
+#### Tested on Sketch 42
 
 ![alt tag](http://i.imgur.com/kyENNor.gif)
 
