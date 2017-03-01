@@ -26,9 +26,9 @@ var copyShadows = function(context) {
 	}
 
 	function getEachShadow(shadowsObj) {
-		var allStyles = [], getShadowStyle, currentShadowStyle, items = [shadowsObj array];
-		for (var i = 0; i < [items count]; i++) {
-			currentShadowStyle = [items objectAtIndex:i];
+		var allStyles = [], getShadowStyle, currentShadowStyle;
+		for (var i = 0; i < shadowsObj.count(); i++) {
+			currentShadowStyle = shadowsObj[i];
 			getShadowStyle = {};
 			getShadowStyle.isEnabled = [currentShadowStyle isEnabled];
 			getShadowStyle.blurRadius = [currentShadowStyle blurRadius];
@@ -76,7 +76,7 @@ var pasteShadows = function(context) {
 		var properties = ["shadows", "innerShadows"], propertyName;
 		for (var property in properties) {
 			propertyName = properties[property];
-			[selectedLayer style]["set" + propertyName[0].toUpperCase() + propertyName.substring(1)]([[MSArray alloc] init])
+			selectedLayer.style()["removeAllStyle" + propertyName[0].toUpperCase() + propertyName.substring(1)]();
 		}
 	}
 }
