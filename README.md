@@ -8,6 +8,4 @@ Copy & paste only shadow styles from layers without others styles getting in the
 
 ## Installation
 
-Open Sketch, Choose **Plugins** > **Manage Plugins** > **Show Plugins Folder**. Download the plugin and add the `Sketch-Copy-Paste-Shadows` folder to the plugins directory.
-
-Can also be found on [Sketch Toolbox](http://sketchtoolbox.com/)
+Open Sketch, Choose **Plugins** > **Manage Plugins** > **Show Plugins Folder**. Download the plugin and add the `Copy Paste Shadows.sketchplugin` file to the plugins directory.
