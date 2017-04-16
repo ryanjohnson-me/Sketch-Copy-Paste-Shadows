@@ -1,6 +1,7 @@
 {
 	"name": "Copy & Paste Shadows",
 	"author": "Ryan Johnson",
+	"identifier": "com.example.sketch.copy-paste-shadows",
 	"version": "0.3",
 	"description": "Copies just the shadows from a layer, and allows pasting onto other layers",
 	"authorEmail": "contact@ryanjohnson.me",
